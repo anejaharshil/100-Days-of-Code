@@ -14,14 +14,30 @@ Output 2:
 
 */
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    int N, first, last, digits, power, middle, result;
+    int n, first, last, digits, middle, result;
 
     printf("Enter a number: ");
-    scanf("%d", &N);
+    scanf("%d", &n);
 
-    last = N % 10;
+
+    if (n < 10) {
+        printf("%d\n", n);
+        return 0;
+    }
+
+    last = n % 10 ;
+    digits = (int)log10(n);
+    first = n / (int)pow(10 , digits);
+    middle = n % (int)pow(10 , digits);
+    middle = middle / 10;
+
+    result = last * (int)pow(10, digits) + middle * 10 + first;
+    printf("%d\n", result);
+    
+    /* last = N % 10;
 
     power = 1;
     digits = N;
@@ -38,7 +54,7 @@ int main() {
 
     result = last * power + middle * 10 + first;
 
-    printf("%d", result);
+    printf("%d", result); */
 
     return 0;
 }
