@@ -1,4 +1,4 @@
-/* Q62: Reverse an array without taking extra space.
+/* Q62: Reverse an array without taking extra space and extra variable.
 
 
 Sample Test Cases:
@@ -11,22 +11,22 @@ Output 1:
 */
 #include <stdio.h>
 int main() {
-    int n , i , temp ;
+    int n , i , j ;
 
-    printf("Enter the number of elements: ");
+    printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
 
-    int arr[100] ;
+    int arr[n] ;
 
     printf("Enter the elements of the array: ");
     for ( i = 0 ; i < n ; i++ ){
         scanf("%d", &arr[i]);
     }
 
-    for ( i = 0 ; i < n/2 ; i++ ){
-        temp = arr[i] ;
-        arr[i] = arr[n-i-1] ;
-        arr[n-i-1] = temp ;
+    for ( i = 0 , j = n-1 ; i < j ; i++ , j-- ){
+        arr[i] = arr[i] + arr[j] ;
+        arr[j] = arr[i] - arr[j] ;
+        arr[i] = arr[i] - arr[j] ;
     }
 
     printf("The reversed array is: ");
