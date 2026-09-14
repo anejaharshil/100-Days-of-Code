@@ -17,7 +17,7 @@ Not Armstrong
 #include<math.h>
 int main(){
 int N ;
-int c;
+int c = 0;
 int original;
 int rem;
 int sum=0 ;

@@ -27,11 +27,11 @@ int main() {
     printf("Enter the position and element to insert: ");
     scanf("%d %d", &position , & element) ;
 
-    for ( j = n ; j >= position ; j-- ){
+    for ( j = n ; j > position ; j-- ){
         arr[j] = arr[j-1] ;
     }
 
-    arr[position-1] = element ;
+    arr[position] = element ;
 
     printf("The array after insertion is: ");
     for ( i = 0 ; i <= n ; i++ ){

@@ -16,27 +16,24 @@ Output 2:
 #include <stdio.h>
 
 int main() {
-    long long N;
-    int digit;
+    char binary[100];
+    int i = 0;
 
     printf("Enter a binary number: ");
-    scanf("%lld", &N);
+    scanf("%s", binary);
 
-    if (N == 0) {
-        printf("1");
-    } else {
-        while (N != 0) {
-            digit = N % 10;
-
-            if (digit == 0) {
-                printf("1");
-            } else {
-                printf("0");
-            }
-
-            N = N / 10;
+    while (binary[i] != '\0') {
+        if (binary[i] == '0') {
+            binary[i] = '1';
         }
+        else if (binary[i] == '1') {
+            binary[i] = '0';
+        }
+
+        i++;
     }
+
+    printf("1's complement: %s", binary);
 
     return 0;
 }

@@ -27,7 +27,7 @@ int main() {
     printf("Enter the position of the element to delete: ");
     scanf("%d", &position);
 
-    for ( j = position-1 ; j < n-1 ; j++ ){
+    for ( j = position ; j < n-1 ; j++ ){
         arr[j] = arr[j+1] ;
     }
 
