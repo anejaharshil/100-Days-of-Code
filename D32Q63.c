@@ -1,4 +1,4 @@
-/* Q63: Merge two arrays without sorting it differently do it with extra varible k in loops only with while and if else  loops.
+/* Q63: Merge two arrays without sorting it differently do it with extra variable k in loops only with while and if else  loops.
 
 
 Sample Test Cases:

@@ -1,26 +1,29 @@
-/* Q74: Find the transpose of a matrix.
+/* Q78: Find the sum of main diagonal elements for a square matrix.
 
 
 Sample Test Cases:
 Input 1:
-2 3
+3 3
 1 2 3
 4 5 6
+7 8 9
 Output 1:
-1 4
-2 5
-3 6
+15
 
 */
 #include <stdio.h>
 int main() {
-    int rows, cols, i, j;
+    int rows, cols, i, j, sum = 0;
 
     printf("Enter the number of rows and columns in the matrix: ");
     scanf("%d %d", &rows, &cols);
 
+    if (rows != cols) {
+        printf("Error: The matrix must be square.\n");
+        return 1;
+    }
+
     int matrix[rows][cols];
-    int transpose[cols][rows];
 
     printf("Enter the elements of the matrix:\n");
     for (i = 0; i < rows; i++) {
@@ -29,20 +32,12 @@ int main() {
         }
     }
 
-    // Calculate the transpose
+    // Calculate the sum of main diagonal elements
     for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
-            transpose[j][i] = matrix[i][j];
-        }
+        sum += matrix[i][i];
     }
 
-    printf("The transpose of the matrix is:\n");
-    for (i = 0; i < cols; i++) {
-        for (j = 0; j < rows; j++) {
-            printf("%d ", transpose[i][j]);
-        }
-        printf("\n");
-    }
+    printf("The sum of main diagonal elements is: %d\n", sum);
 
     return 0;
 }
