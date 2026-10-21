@@ -19,26 +19,33 @@ Output 3:
 
 */
 #include <stdio.h>
-int findMissingNumber(int *nums, int numsSize) {
-    int expectedSum = numsSize * (numsSize + 1) / 2; // Sum of first n natural numbers
-    int actualSum = 0;
-
-    for (int i = 0; i < numsSize; i++) {
-        actualSum += nums[i];
-    }
-
-    return expectedSum - actualSum; // The missing number
-}
 int main() {
     int nums1[] = {0, 3, 2, 4};
-    printf("%d\n", findMissingNumber(nums1, sizeof(nums1) / sizeof(nums1[0])));
+    int size1 = sizeof(nums1) / sizeof(nums1[0]);
+    int missing1 = size1;
+
+    for (int i = 0; i < size1; i++) {
+        missing1 ^= i ^ nums1[i];
+    }
+    printf("%d\n", missing1);
 
     int nums2[] = {1, 2, 3};
-    printf("%d\n", findMissingNumber(nums2, sizeof(nums2) / sizeof(nums2[0])));
+    int size2 = sizeof(nums2) / sizeof(nums2[0]);
+    int missing2 = size2;
+
+    for (int i = 0; i < size2; i++) {
+        missing2 ^= i ^ nums2[i];
+    }
+    printf("%d\n", missing2);
 
     int nums3[] = {0, 4, 3, 1, 5};
-    printf("%d\n", findMissingNumber(nums3, sizeof(nums3) / sizeof(nums3[0])));
+    int size3 = sizeof(nums3) / sizeof(nums3[0]);
+    int missing3 = size3;
 
+    for (int i = 0; i < size3; i++) {
+        missing3 ^= i ^ nums3[i];
+    }
+    printf("%d\n", missing3);
+    printf("\n");
     return 0;
-    
 }
