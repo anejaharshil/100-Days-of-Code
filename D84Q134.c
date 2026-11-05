@@ -13,8 +13,8 @@ int main() {
     enum Status { SUCCESS, FAILURE, TIMEOUT };
     enum Status status;
 
-    // Sample input for testing
-    status = FAILURE; // Change this to SUCCESS or TIMEOUT to test other cases
+    printf("Enter status (0 for SUCCESS, 1 for FAILURE, 2 for TIMEOUT): ");
+    scanf("%d", &status);
 
     switch (status) {
         case SUCCESS:
@@ -31,5 +31,5 @@ int main() {
     }
 
     return 0;
-    
+
 }

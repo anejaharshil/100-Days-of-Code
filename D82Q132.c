@@ -13,8 +13,8 @@ int main() {
     enum TrafficLight { RED, YELLOW, GREEN };
     enum TrafficLight light;
 
-    // Sample input for testing
-    light = GREEN; // Change this to RED or YELLOW to test other cases
+    printf("Enter traffic light color (0 for RED, 1 for YELLOW, 2 for GREEN): ");
+    scanf("%d", &light);
 
     switch (light) {
         case RED:
@@ -27,9 +27,9 @@ int main() {
             printf("Go\n");
             break;
         default:
-            printf("Invalid traffic light\n");
+            printf("Invalid traffic light color\n");
     }
 
     return 0;
-    
+
 }
